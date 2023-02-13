@@ -23,7 +23,7 @@ export const IconButton: FC<IconButtonProps> = ({
         <button
             type={type}
             disabled={loading || disabled}
-            className={'border-solid border border-gray-600 text-lg rounded p-2 hover:scale-105 transition duration-300 ease-out hover:ease-in' + ` ${className}`}
+            className={'border-solid border border-gray-600 text-lg rounded p-2 hover:scale-105 transition duration-250' + ` ${className}`}
 
             {...props}
         >

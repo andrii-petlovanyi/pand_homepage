@@ -11,6 +11,7 @@ import { IconButton } from '../../buttons/IconButton/IconButton'
 const mPlus = M_PLUS_Rounded_1c({ subsets: ['latin'], weight: ["400", "500", "700"], variable: '--font-mplus' })
 
 const routes = [
+    { href: '/', name: 'About me' },
     { href: '/portfolio', name: 'Portfolio' },
     { href: '/blog', name: 'Blog' }
 ]
@@ -19,6 +20,7 @@ export const Header = () => {
     const path = usePathname()
     const { theme, setTheme } = useTheme()
     const [isDark, setIsDark] = useState<boolean>()
+    // const [mounted, setMounted] = useState<boolean>(false)
 
     useEffect(() => {
         if (theme == 'dark') {
@@ -28,6 +30,11 @@ export const Header = () => {
         }
     }, [theme])
 
+    // useEffect(() => {
+    //     setMounted(true)
+    // }, [])
+
+
     return (
         <header
             className={'py-2 flex justify-between'}>
@@ -36,7 +43,7 @@ export const Header = () => {
                 {routes.map(r => <Link
                     key={r.href}
                     className={r.href == path
-                        ? 'text-red-500'
+                        ? 'text-violet-600'
                         : ''} href={r.href}
                 >
                     {r.name}

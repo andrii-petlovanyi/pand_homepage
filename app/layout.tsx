@@ -14,9 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <ServerThemeProvider attribute="class">
-      <html lang="en">
+      <html lang="en" >
         <head />
-        <body className={`${roboto.className}`}>
+        <body className={`${roboto.className} overflow-hidden`}>
           <Providers>
             <div className='min-h-screen relative px-2 container max-w-4xl xs:mx-auto xs:px-5'>
               <Header />
