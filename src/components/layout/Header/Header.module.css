@@ -1,0 +1,41 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 20px;
+  padding: 5px 0;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  color: var(--accent-red);
+}
+
+.navigation {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+
+  .navigation {
+     display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.burger_btn {
+    display: none;
+}
+
+  }
+
+

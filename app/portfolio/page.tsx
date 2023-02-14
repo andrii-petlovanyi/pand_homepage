@@ -1,10 +1,9 @@
-import { FrameWrapper } from "@/src/Animations/FrameWrapper/FrameWrapper";
+import { FrameWrapper } from "@/components/Animations/FrameWrapper/FrameWrapper";
 
 
 export default function Portfolio() {
   return (
     <FrameWrapper>
-
       <h1>
         Portfolio lists...
       </h1>

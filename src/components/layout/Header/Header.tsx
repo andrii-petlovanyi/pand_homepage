@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { M_PLUS_Rounded_1c } from '@next/font/google'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useTheme } from 'next-themes'
 import { MdLightMode, MdMenu, MdNightlight } from 'react-icons/md'
 import { IconButton } from '../../buttons/IconButton/IconButton'
+import styles from './Header.module.css'
 
 const mPlus = M_PLUS_Rounded_1c({ subsets: ['latin'], weight: ["400", "500", "700"], variable: '--font-mplus' })
 
@@ -18,45 +18,29 @@ const routes = [
 
 export const Header = () => {
     const path = usePathname()
-    const { theme, setTheme } = useTheme()
-    const [isDark, setIsDark] = useState<boolean>()
-    // const [mounted, setMounted] = useState<boolean>(false)
-
-    useEffect(() => {
-        if (theme == 'dark') {
-            setIsDark(true)
-        } else {
-            setIsDark(false)
-        }
-    }, [theme])
-
-    // useEffect(() => {
-    //     setMounted(true)
-    // }, [])
-
 
     return (
         <header
-            className={'py-2 flex justify-between'}>
-            <Link href={'/'} className={`${mPlus.className} ` + 'font-bold text-xl flex items-center'}>pand.dev</Link>
-            <nav className='hidden xs:flex gap-x-4 items-center'>
+            className={styles.header}>
+            <Link href={'/'} className={`${mPlus.className} ${styles.logo}`}>pand.dev</Link>
+            <nav className={styles.navigation}>
                 {routes.map(r => <Link
                     key={r.href}
                     className={r.href == path
-                        ? 'text-violet-600'
-                        : ''} href={r.href}
+                        ? styles.active
+                        : ''}
+                    href={r.href}
                 >
                     {r.name}
                 </Link>)}
             </nav>
-            <div className='flex gap-x-2'>
+            <div className='flex gap-x-1 xs:gap-x-2'>
+
                 <IconButton
-                    onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                    className='text-black dark:text-white'
-                >
-                    {isDark ? <MdLightMode /> : <MdNightlight />}
-                </IconButton>
-                <IconButton className='xs:hidden'><MdMenu /></IconButton>
+                    className={styles.burger_btn}
+                    variant='ghost'
+                    ariaLabel='Mobile menu button'
+                ><MdMenu /></IconButton>
             </div>
         </header>
     )

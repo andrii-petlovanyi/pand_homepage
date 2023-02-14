@@ -1,11 +1,10 @@
-import { Footer } from '@/src/components/layout/Footer/Footer'
-import { Header } from '@/src/components/layout/Header/Header'
 import '@/styles/globals.css'
+import { Footer } from '@/components/layout/Footer/Footer'
+import { Header } from '@/components/layout/Header/Header'
 import { Roboto } from '@next/font/google'
-import { ServerThemeProvider } from 'next-themes'
-import { Providers } from './providers'
+import styles from './page.module.css'
 
-const roboto = Roboto({ subsets: ['latin'], weight: ["400", "500", "700"], variable: '--font-roboto' })
+const roboto = Roboto({ subsets: ['latin'], weight: ["100", "300", "400", "500", "700", "900"], variable: '--font-roboto' })
 
 export default function RootLayout({
   children,
@@ -13,19 +12,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ServerThemeProvider attribute="class">
-      <html lang="en" >
-        <head />
-        <body className={`${roboto.className} overflow-hidden`}>
-          <Providers>
-            <div className='min-h-screen relative px-2 container max-w-4xl xs:mx-auto xs:px-5'>
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </Providers>
-        </body>
-      </html >
-    </ServerThemeProvider>
+    <html lang="en" >
+      <head />
+      <body className={`${roboto.className} ${styles.body}`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
+    </html >
   )
 }

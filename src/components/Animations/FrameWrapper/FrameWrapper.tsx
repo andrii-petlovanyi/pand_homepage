@@ -5,21 +5,19 @@ import React, { ReactNode } from 'react'
 
 interface FramerWrapperProps {
     children: ReactNode;
-    className?: string;
 }
 
-export const FrameWrapper = ({ children, className, ...props }: FramerWrapperProps) => {
+export const FrameWrapper = ({ children, ...props }: FramerWrapperProps) => {
     return (
         <AnimatePresence mode='wait'>
             <motion.main
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: '-100%', opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className={`my-4 ${className ? className : ''}`}
+                transition={{ duration: 0.25 }}
                 {...props}
             >
-                {children}
+                <div style={{ paddingBottom: '44px' }}>{children}</div>
             </motion.main>
         </AnimatePresence>
     )

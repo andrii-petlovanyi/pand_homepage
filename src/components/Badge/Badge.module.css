@@ -1,0 +1,38 @@
+.badge {
+}
+
+.red {
+}
+
+.green {
+  color: green;
+  border-color: green;
+}
+
+.blue {
+}
+
+.outline {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.solid {
+}
+
+.subtitle {
+}
+
+.xs {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.sm {
+}
+
+.base {
+}
+
+.lg {
+}
