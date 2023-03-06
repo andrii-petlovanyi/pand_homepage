@@ -1,9 +1,9 @@
-
 .header {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   align-items: center;
+  overflow: hidden;
 }
 
 .logo {
@@ -16,8 +16,30 @@
   align-items: center;
 }
 
+.link {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  transform: translateX(105%);
+  background-color: var(--accent-green);
+  width: 100%;
+}
+
+.active_line::after {
+  transition: transform 350ms ease;
+  transform: translateX(0);
+}
+
 .active {
-  color: var(--accent-red);
+  transition: border 350ms ease;
+  color: var(--accent-green);
 }
 
 .navigation {
@@ -25,17 +47,13 @@
 }
 
 @media screen and (min-width: 480px) {
-
   .navigation {
-     display: flex;
+    display: flex;
     gap: 10px;
     align-items: center;
-}
-
-.burger_btn {
-    display: none;
-}
-
   }
 
-
+  .burger_btn {
+    display: none;
+  }
+}

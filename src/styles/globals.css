@@ -1,18 +1,29 @@
 :root {
-  --text-color: #202020;
---bg-color: #dce1e3;
---accent-red: #b73225;
---accent-blue: #004e7c;
---accent-maroon: #591c0b;
---accent-gray: #5c5f58;
+  /* --text-color: #202020;
+  --bg-color: #dce1e3;
+  --accent-red: #b73225;
+  --accent-blue: #004e7c;
+  --accent-maroon: #591c0b;
+  --accent-gray: #5c5f58;
+ */
 
---screen-xs: 320px;
---screen-s: 480px;
---screen-m: 768px;
---screen-l: 960px;
---screen-xl: 1280px;
+  --text-color: #d2d3d3;
+  --text-color-hover: #a1a3a3;
+  --bg-color: #2d3032;
+  --accent-violet: #9615db;
+  --main-gray: #7d7f80;
+  --accent-gray: #555759;
+  --accent-red: #e9322e;
+  --accent-rose: #f2c4ce;
+  --accent-orange: #f58f7c;
+  --accent-green: #408697;
+
+  --screen-xs: 320px;
+  --screen-s: 480px;
+  --screen-m: 768px;
+  --screen-l: 960px;
+  --screen-xl: 1280px;
 }
-
 
 * {
   box-sizing: border-box;
@@ -28,7 +39,9 @@ body {
 
 body {
   color: var(--text-color);
-  background: var(--bg-color);
+  /* background: var(--bg-color); */
+  background: rgb(24, 24, 27);
+  letter-spacing: 0.02em;
 }
 
 a {
