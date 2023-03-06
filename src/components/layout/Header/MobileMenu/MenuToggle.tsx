@@ -15,11 +15,11 @@ const Path = (props: any) => (
   />
 );
 
-interface IMenuToggle {
+interface IMenuToggleProps {
   toggle: () => void;
 }
 
-export const MenuToggle = ({ toggle }: IMenuToggle): JSX.Element => (
+export const MenuToggle = ({ toggle }: IMenuToggleProps): JSX.Element => (
   <button onClick={toggle} className={styles.toggle}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path

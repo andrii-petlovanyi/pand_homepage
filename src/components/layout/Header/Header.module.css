@@ -33,12 +33,12 @@
 }
 
 .active_line::after {
-  transition: transform 350ms ease;
+  transition: transform 550ms ease;
   transform: translateX(0);
 }
 
 .active {
-  transition: border 350ms ease;
+  transition: border 550ms ease;
   color: var(--accent-green);
 }
 

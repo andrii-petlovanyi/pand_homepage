@@ -3,7 +3,7 @@
 }
 
 @media screen and (max-width: 479px) {
-  .background {
+  .mobile_nav__wrap {
     position: absolute;
     top: 0;
     right: 0;
@@ -28,7 +28,6 @@
     top: 100px;
     right: 0;
     width: 230px;
-    z-index: 1;
   }
 
   .mobile_nav__item {
@@ -95,4 +94,8 @@
     align-items: center;
     cursor: pointer;
   }
+}
+
+.zIndex {
+  z-index: 1;
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
 import { IRoute } from '@/interface/header';
 import { useDimensions } from '@/hooks/useDimensions';
@@ -29,14 +29,30 @@ const sidebar = {
   },
 };
 
-interface IMobileMenu {
+interface IMobileMenuProps {
   routes: IRoute[];
 }
 
-export const MobileMenu = ({ routes }: IMobileMenu): JSX.Element => {
+export const MobileMenu = ({ routes }: IMobileMenuProps): JSX.Element => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
+
+  useEffect(() => {
+    const html = document.querySelector('html');
+    if (html) {
+      if (isOpen) {
+        html.style.overflow = 'hidden';
+      } else {
+        html.style.overflow = 'auto';
+      }
+    }
+    return () => {
+      if (html) {
+        html.style.overflow = 'auto';
+      }
+    };
+  }, [isOpen]);
 
   return (
     <motion.nav
@@ -46,8 +62,8 @@ export const MobileMenu = ({ routes }: IMobileMenu): JSX.Element => {
       ref={containerRef}
       className={styles.mobile_nav}
     >
-      <motion.div className={styles.background} variants={sidebar} />
-      <MenuList routes={routes} toggleOpen={toggleOpen} />
+      <motion.div className={styles.mobile_nav__wrap} variants={sidebar} />
+      <MenuList routes={routes} toggleOpen={toggleOpen} isOpen={isOpen} />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
   );

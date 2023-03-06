@@ -4,8 +4,6 @@ import React from 'react';
 import { M_PLUS_Rounded_1c } from '@next/font/google';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MdLightMode, MdMenu, MdNightlight } from 'react-icons/md';
-import { IconButton } from '../../buttons/IconButton/IconButton';
 import styles from './Header.module.css';
 import cn from 'classnames';
 import { MobileMenu } from './MobileMenu/MobileMenu';
