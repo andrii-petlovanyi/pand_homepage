@@ -1,4 +1,4 @@
-import DefaultTags from "app/DefaultTags";
+import DefaultTags from 'app/defaultTags';
 
 export default function Head() {
   return (
@@ -6,5 +6,5 @@ export default function Head() {
       <title>pand.dev - project</title>
       <DefaultTags />
     </>
-  )
+  );
 }

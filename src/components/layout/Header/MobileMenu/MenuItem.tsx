@@ -3,8 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { IRoute } from '@/interface/header';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+import cn from 'classnames';
 import styles from './MobileMenu.module.css';
 
 const variants = {
@@ -33,6 +35,8 @@ export const MenuItem = ({
   route,
   toggleOpen,
 }: IMenuITemProps): JSX.Element => {
+  const path = usePathname();
+
   return (
     <motion.li
       variants={variants}
@@ -42,7 +46,9 @@ export const MenuItem = ({
     >
       <Link
         href={route.href}
-        className={styles.mobile_nav__link}
+        className={cn(styles.mobile_nav__link, {
+          [styles.active]: route.href == path,
+        })}
         onClick={() => toggleOpen()}
       >
         {route.name}

@@ -28,6 +28,9 @@
     top: 100px;
     right: 0;
     width: 230px;
+
+    z-index: 1;
+    pointer-events: none;
   }
 
   .mobile_nav__item {
@@ -55,7 +58,7 @@
     -ms-user-select: none;
     cursor: pointer;
     position: absolute;
-    top: 3px;
+    top: 8px;
     right: 5px;
     width: 50px;
     height: 50px;
@@ -96,6 +99,10 @@
   }
 }
 
-.zIndex {
-  z-index: 1;
+.view {
+  pointer-events: all;
+}
+
+.active {
+  color: var(--accent-green);
 }

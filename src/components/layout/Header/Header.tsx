@@ -1,17 +1,20 @@
 'use client';
 
 import React from 'react';
-import { M_PLUS_Rounded_1c } from '@next/font/google';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import styles from './Header.module.css';
-import cn from 'classnames';
+import { M_PLUS_Rounded_1c } from '@next/font/google';
+
 import { MobileMenu } from './MobileMenu/MobileMenu';
+
+import cn from 'classnames';
+import styles from './Header.module.css';
 
 const mPlus = M_PLUS_Rounded_1c({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['100', '300', '400', '500', '700'],
   variable: '--font-mplus',
+  display: 'fallback',
 });
 
 const routes = [
@@ -26,7 +29,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <Link href={'/'} className={`${mPlus.className} ${styles.logo}`}>
-        pand.dev
+        pand<span className={styles.logo_accent}>.dev</span>
       </Link>
       <nav className={styles.navigation}>
         {routes.map(r => (

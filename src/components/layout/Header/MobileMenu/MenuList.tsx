@@ -31,7 +31,7 @@ export const MenuList = ({
   <motion.ul
     variants={variants}
     className={cn(styles.mobile_nav__list, {
-      [styles.zIndex]: isOpen === true,
+      [styles.view]: isOpen === true,
     })}
   >
     {routes.map((route: IRoute) => (
